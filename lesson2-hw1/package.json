@@ -1,0 +1,11 @@
+{
+  "name": "lesson2-hw1",
+  "version": "1.0.0",
+  "description": "console ts calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Sergey Videtskikh",
+  "license": "ISC"
+}
