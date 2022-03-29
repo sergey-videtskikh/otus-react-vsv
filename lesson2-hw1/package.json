@@ -4,9 +4,11 @@
   "description": "console ts calculator",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "jest",
-    "lint": "eslint ./"
+    "build": "npx webpack --mode production",
+    "calc": "npx ts-node src/calc",
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
+    "test": "npx jest",
+    "check": "npm test && npm run lint"
   },
   "author": "Sergey Videtskikh",
   "license": "ISC",
