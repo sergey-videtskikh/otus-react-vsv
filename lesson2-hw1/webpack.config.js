@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     mode: 'development',
     entry: {
-        main: path.resolve(__dirname, './src/index.js'),
+        main: path.resolve(__dirname, './src/index.ts'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -13,13 +13,15 @@ module.exports = {
     },
     module: {
         rules: [
-            // JavaScript
             {
-                test: /\.js$/,
+                test: /\.tsx?$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
-                use: ['babel-loader'],
             },
         ],
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
     },
     plugins: [
         new CleanWebpackPlugin(),
