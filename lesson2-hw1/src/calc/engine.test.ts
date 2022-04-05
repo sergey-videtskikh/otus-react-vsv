@@ -46,6 +46,28 @@ describe("firstPrioritiesCalc mixed with second priorities cases", () => {
       100,
     ]);
   });
+
+  it("3 ! - 10 * 10 / 5 - 3 ** + 2 ^ 2", () => {
+    expect(
+      firstPrioritiesCalc([
+        3,
+        "!",
+        "-",
+        10,
+        "*",
+        "10",
+        "/",
+        5,
+        "-",
+        3,
+        "**",
+        "+",
+        2,
+        "^",
+        2,
+      ])
+    ).toEqual([6, "-", 20, "-", 9, "+", 4]);
+  });
 });
 
 describe("secondPrioritiesCalc invalid cases", () => {
