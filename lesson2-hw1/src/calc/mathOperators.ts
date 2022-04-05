@@ -64,3 +64,17 @@ export const mathOperatorsPriorities: { [key: string]: number } = {
   "^": FIRST,
   "!": FIRST,
 };
+
+export const mathUnaryTypes: number[] = [1, 2];
+
+const [UNARY, BINARY] = mathUnaryTypes;
+
+export const mathOperatorsUnaryType: { [key: string]: number } = {
+  "*": BINARY,
+  "/": BINARY,
+  "+": BINARY,
+  "-": BINARY,
+  "**": UNARY,
+  "^": BINARY,
+  "!": UNARY,
+};
