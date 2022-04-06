@@ -1,3 +1,5 @@
+import { isNumber } from "./helpers";
+
 export type ScalarOperationType = (first: number, second: number) => number;
 export type UnaryOperationType = (arg: number) => number;
 
@@ -78,3 +80,15 @@ export const mathOperatorsUnaryType: { [key: string]: number } = {
   "^": BINARY,
   "!": UNARY,
 };
+
+export function isOperatorUnary(item: string): boolean {
+  return isOperator(item) && mathOperatorsUnaryType[item] === UNARY;
+}
+
+export function isOperatorBinary(item: string): boolean {
+  return isOperator(item) && mathOperatorsUnaryType[item] === BINARY;
+}
+
+export function isOperator(item: string): boolean {
+  return !isNumber(item) && mathOperators.hasOwnProperty(item);
+}
