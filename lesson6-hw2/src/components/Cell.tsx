@@ -2,7 +2,7 @@ import { FC } from "react";
 import './Cell.css';
 
 type CellProps = {
-  value?: string;
+  value: string;
   onClick?: () => void;
 };
 
