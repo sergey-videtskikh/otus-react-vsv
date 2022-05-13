@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
 import { Cell } from "./Cell";
 
 export default {
   component: Cell,
-  title: 'Cell',
+  title: "Game/Cell",
 };
 
-export const With1 = () => (
-  <Cell value={"1"}/>
-)
+export const Index1Filled = () => (
+  <Cell id={1} active={true} onClick={() => {}} />
+);
 
-export const With13 = () => (
-  <Cell value={"13"}/>
-)
+export const Index13 = () => <Cell id={13} active={false} onClick={() => {}} />;

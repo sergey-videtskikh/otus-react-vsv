@@ -1,15 +1,22 @@
 import { FC } from "react";
-import './Cell.css';
+
+import "./Cell.css";
 
 type CellProps = {
-  value: string;
-  onClick?: () => void;
+  id: number;
+  active?: boolean;
+  onClick: () => void;
 };
 
-export const Cell: FC<CellProps> = (props: CellProps) => {
+export const Cell: FC<CellProps> = ({
+  id,
+  active = false,
+  onClick,
+}: CellProps) => {
+  const styleSelected = active ? " selected" : "";
   return (
-    <button className="cell" onClick={props.onClick}>
-      {props.value}
+    <button className={"cell" + styleSelected} onClick={onClick}>
+      {id}
     </button>
   );
 };

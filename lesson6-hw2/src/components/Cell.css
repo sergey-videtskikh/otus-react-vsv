@@ -1,7 +1,7 @@
 .cell {
     background: #fff;
     border: 1px solid #999;
-    float: left;
+    /*float: left;*/
     font-size: 24px;
     font-weight: bold;
     line-height: 34px;
@@ -13,10 +13,14 @@
     width: 34px;
 }
 
-.cell:focus {
-    outline: none;
+/*.cell:focus {*/
+/*    outline: none;*/
+/*}*/
+
+.selected {
+    background: #1ea7fd;
 }
 
-.kbd-navigation .cell:focus {
-    background: #ddd;
-}
+/*.kbd-navigation .cell:focus {*/
+/*    background: #ddd;*/
+/*}*/
