@@ -2,7 +2,7 @@ import { FC } from "react";
 import './Cell.css';
 
 type StatusInfoProps = {
-  value: number;
+  value?: number;
   onClick?: () => void;
 };
 
