@@ -4,39 +4,38 @@ import React from "react";
 import "./Field.css";
 
 type FiledProps = {
-  squares: string[];
+  cells: { id: number; active: boolean }[];
   onClick: (i: number) => void;
 };
 
 type FiledState = {};
 
 export default class Field extends React.Component<FiledProps, FiledState> {
-  renderCell(i: number) {
+  renderCell(id: number, filled?: boolean) {
     return (
-      <Cell
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
+      <Cell id={id} active={filled} onClick={() => this.props.onClick(id)} />
     );
   }
 
   render() {
+    const cells = this.props.cells;
+
     return (
       <div className="field">
         <div className="field-row">
-          {this.renderCell(0)}
-          {this.renderCell(1)}
-          {this.renderCell(2)}
+          {this.renderCell(cells[0].id, cells[0].active)}
+          {this.renderCell(cells[1].id, cells[1].active)}
+          {this.renderCell(cells[2].id, cells[2].active)}
         </div>
         <div className="field-row">
-          {this.renderCell(3)}
-          {this.renderCell(4)}
-          {this.renderCell(5)}
+          {this.renderCell(cells[3].id, cells[3].active)}
+          {this.renderCell(cells[4].id, cells[4].active)}
+          {this.renderCell(cells[5].id, cells[5].active)}
         </div>
         <div className="field-row">
-          {this.renderCell(6)}
-          {this.renderCell(7)}
-          {this.renderCell(8)}
+          {this.renderCell(cells[6].id, cells[6].active)}
+          {this.renderCell(cells[7].id, cells[7].active)}
+          {this.renderCell(cells[8].id, cells[8].active)}
         </div>
       </div>
     );
